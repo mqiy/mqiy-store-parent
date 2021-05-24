@@ -15,19 +15,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-
-			<!--去掉logback-->
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-logging</artifactId>
-				</exclusion>
-			</exclusions>
-
+			<groupId>xyz.mqiy</groupId>
+			<artifactId>mqiy-common</artifactId>
 		</dependency>
-
 
 	</dependencies>
 

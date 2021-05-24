@@ -16,6 +16,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<mqiy-version>0.0.1-SNAPSHOT</mqiy-version>
 	</properties>
 	
     <modules>
@@ -80,6 +81,34 @@
 				<scope>import</scope>
 			</dependency>
 			-->
+
+			<dependency>
+				<groupId>xyz.mqiy</groupId>
+				<artifactId>mqiy-common</artifactId>
+				<version>${mqiy-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>xyz.mqiy</groupId>
+				<artifactId>mqiy-user</artifactId>
+				<version>${mqiy-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>xyz.mqiy</groupId>
+				<artifactId>mqiy-order</artifactId>
+				<version>${mqiy-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>xyz.mqiy</groupId>
+				<artifactId>mqiy-product</artifactId>
+				<version>${mqiy-version}</version>
+			</dependency>
+
+
+
 		</dependencies>
 	</dependencyManagement>
 
