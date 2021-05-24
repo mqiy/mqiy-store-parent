@@ -16,8 +16,4 @@ public interface OrderService {
      */
     Order getById(Long id);
 
-
-
-
-    Integer save()
 }
