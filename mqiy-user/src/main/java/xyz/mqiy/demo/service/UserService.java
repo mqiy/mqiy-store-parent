@@ -15,4 +15,7 @@ public interface UserService {
      * @return
      */
     User getById(Long id);
+
+
+    Integer save(User user);
 }

@@ -1,13 +1,17 @@
 dubbo:
+  application:
+    name: mqiy-user
+  config-center:
+    timeout: 10000
   protocol:
     name: dubbo
-    port: 12345
+    port: 2334
   registry:
     address: zookeeper://127.0.0.1:2181
   scan:
     base-packages: xyz.mqiy.demo.service
 spring:
   application:
-    name: spring-boot-dubbo-user-service
+    name: mqiy-user
 server:
   port: 7070

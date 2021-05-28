@@ -1,6 +1,6 @@
 package xyz.mqiy.demo.service.impl;
 
-import org.apache.dubbo.config.annotation.DubboService;
+import com.alibaba.dubbo.config.annotation.Service;
 import xyz.mqiy.demo.domain.Product;
 import xyz.mqiy.demo.service.ProductService;
 
@@ -9,7 +9,7 @@ import xyz.mqiy.demo.service.ProductService;
  * @Description TODO
  * @Date 2021/5/20 19:14
  */
-@DubboService
+@Service
 public class ProductServiceImpl implements ProductService {
     @Override
     public Product getById(Long id) {

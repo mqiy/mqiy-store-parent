@@ -31,7 +31,17 @@
 	<dependencies>
 
 
-		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<!--全局排除spring-boot-starter-logging内的所有依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>*</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
 		<!-- log4j2. -->
 		<dependency>
@@ -48,6 +58,13 @@
 			<groupId>com.alibaba.spring.boot</groupId>
 			<artifactId>dubbo-spring-boot-starter</artifactId>
 			<version>2.0.0</version>
+
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 
@@ -112,22 +129,17 @@
 		</dependencies>
 	</dependencyManagement>
 
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://maven.weimob.com/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://maven.weimob.com/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
