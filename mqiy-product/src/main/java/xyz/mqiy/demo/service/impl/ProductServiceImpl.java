@@ -1,7 +1,7 @@
 package xyz.mqiy.demo.service.impl;
 
 import org.apache.dubbo.config.annotation.DubboService;
-import xyz.mqiy.demo.domain.Product;
+import xyz.mqiy.demo.dto.out.ProductOutDto;
 import xyz.mqiy.demo.service.ProductService;
 
 /**
@@ -12,11 +12,11 @@ import xyz.mqiy.demo.service.ProductService;
 @DubboService
 public class ProductServiceImpl implements ProductService {
     @Override
-    public Product getById(Long id) {
-        Product user =new Product();
-        user.setQuantity(31);
-        user.setName("小白鞋");
-        user.setId(id);
-        return user;
+    public ProductOutDto getById(Long id) {
+        ProductOutDto result =new ProductOutDto();
+        result.setQuantity(31);
+        result.setName("小白鞋");
+        result.setId(id);
+        return result;
     }
 }
