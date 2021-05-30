@@ -1,12 +1,12 @@
-package xyz.mqiy.demo.mapper;
+package xyz.mqiy.demo.dao;
 
 import tk.mybatis.mapper.common.Mapper;
 import xyz.mqiy.demo.entity.Product;
 
 /**
  * @author chris
- * @Description ProductMapper
- * @Date 2021/5/28 15:54
+ * @Description TODO
+ * @Date 2021/5/30 17:51
  */
 public interface ProductMapper extends Mapper<Product> {
 }

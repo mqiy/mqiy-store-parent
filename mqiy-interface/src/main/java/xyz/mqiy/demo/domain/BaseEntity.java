@@ -18,11 +18,11 @@ public class BaseEntity {
      */
     private Long id;
 
-    private LocalDateTime createdTime;
+    private LocalDateTime createdAt;
 
     private String createdBy;
 
-    private LocalDateTime updatedTime;
+    private LocalDateTime updatedAt;
 
     private String updatedBy;
 

@@ -1,5 +1,6 @@
 package xyz.mqiy.demo.service;
 
+import xyz.mqiy.demo.dto.in.ProductAddInDto;
 import xyz.mqiy.demo.dto.out.ProductOutDto;
 
 /**
@@ -15,4 +16,7 @@ public interface ProductService {
      * @return
      */
     ProductOutDto getById(Long id);
+
+
+    Integer save(ProductAddInDto inDto);
 }
