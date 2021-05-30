@@ -34,5 +34,13 @@ CREATE TABLE `product` (
 
 
 
+```
 
+### 显示 sql
+```yml
+# mybatis show sql
+
+logging:
+  level:
+    xyz.mqiy.demo.dao : debug
 ```

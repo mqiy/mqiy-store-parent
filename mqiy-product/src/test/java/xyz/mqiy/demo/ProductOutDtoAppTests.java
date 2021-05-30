@@ -41,9 +41,9 @@ class ProductOutDtoAppTests {
 
 	@Test
 	public void testSelect(){
-
 		Product product = new Product();
 		product.setName(PRODUCT_NAME);
+		product.setQuantity(99);
 		List<Product> products = productMapper.select(product);
 		Assert.notEmpty(products,"找不到");
 	}
