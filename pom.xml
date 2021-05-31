@@ -33,8 +33,6 @@
 	<dependencies>
 
 
-
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -99,16 +97,6 @@
 				<version>${dubbo.version}</version>
 			</dependency>
 
-
-			<!--
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
-				<version>2.2.1.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			-->
 			<dependency>
 				<groupId>org.apache.dubbo</groupId>
 				<artifactId>dubbo-spring-boot-starter</artifactId>
