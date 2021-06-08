@@ -1,145 +1,151 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.10.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>xyz.mqiy</groupId>
-	<artifactId>mqiy-store-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>mqiy-store-parent</name>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.10.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>xyz.mqiy</groupId>
+    <artifactId>mqiy-store-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>mqiy-store-parent</name>
     <packaging>pom</packaging>
-	<description>Demo project for Spring Boot</description>
-	<properties>
-		<java.version>1.8</java.version>
-		<mqiy-version>0.0.1-SNAPSHOT</mqiy-version>
-	</properties>
-	
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>1.8</java.version>
+        <mqiy.version>0.0.1-SNAPSHOT</mqiy.version>
+        <dubbo-start.version>2.0.0</dubbo-start.version>
+        <mapper-start.version>2.1.5</mapper-start.version>
+        <zkclient.version>0.10</zkclient.version>
+        <fastjson.version>1.2.76</fastjson.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
+    </properties>
+
     <modules>
-        <module>mqiy-user</module>
+        <module>mqiy-member</module>
         <module>mqiy-product</module>
         <module>mqiy-order</module>
-		<module>mqiy-common</module>
+        <module>mqiy-common</module>
+        <module>mqiy-interface</module>
 
     </modules>
 
 
-	<dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
 
 
-		<!--全局排除spring-boot-starter-logging内的所有依赖-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-logging</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+    <dependencyManagement>
+        <dependencies>
 
-		<!-- log4j2. -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
-		</dependency>
+            <dependency>
+                <groupId>com.alibaba.spring.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-start.version}</version>
+            </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>slf4j-log4j12</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
-		<dependency>
-			<groupId>com.alibaba.spring.boot</groupId>
-			<artifactId>dubbo-spring-boot-starter</artifactId>
-			<version>2.0.0</version>
+            <dependency>
+                <groupId>xyz.mqiy</groupId>
+                <artifactId>mqiy-common</artifactId>
+                <version>${mqiy.version}</version>
+            </dependency>
 
-			<exclusions>
-				<exclusion>
-					<groupId>log4j</groupId>
-					<artifactId>log4j</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+            <dependency>
+                <groupId>xyz.mqiy</groupId>
+                <artifactId>mqiy-interface</artifactId>
+                <version>${mqiy.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>xyz.mqiy</groupId>
+                <artifactId>mqiy-interface</artifactId>
+                <version>${mqiy.version}</version>
+            </dependency>
 
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-	</dependencies>
+            <dependency>
+                <groupId>xyz.mqiy</groupId>
+                <artifactId>mqiy-order</artifactId>
+                <version>${mqiy.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>xyz.mqiy</groupId>
+                <artifactId>mqiy-product</artifactId>
+                <version>${mqiy.version}</version>
+            </dependency>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- Apache Dubbo
-			<dependency>
-				<groupId>org.apache.dubbo</groupId>
-				<artifactId>dubbo-dependencies-bom</artifactId>
-				<version>2.7.8</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			-->
-
-			<dependency>
-				<groupId>xyz.mqiy</groupId>
-				<artifactId>mqiy-common</artifactId>
-				<version>${mqiy-version}</version>
-			</dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper-start.version}</version>
+            </dependency>
 
 
-			<dependency>
-				<groupId>xyz.mqiy</groupId>
-				<artifactId>mqiy-user</artifactId>
-				<version>${mqiy-version}</version>
-			</dependency>
+            <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${validation-api.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>xyz.mqiy</groupId>
-				<artifactId>mqiy-order</artifactId>
-				<version>${mqiy-version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>xyz.mqiy</groupId>
-				<artifactId>mqiy-product</artifactId>
-				<version>${mqiy-version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.junit.vintage</groupId>
+                        <artifactId>junit-vintage-engine</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
 
+            <!--全局排除spring-boot-starter-logging内的所有依赖-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <groupId>*</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
-		</dependencies>
-	</dependencyManagement>
+        </dependencies>
+    </dependencyManagement>
 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Nexus Release Repository</name>
-			<url>http://maven.weimob.com/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Nexus Snapshot Repository</name>
-			<url>http://maven.weimob.com/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 </project>

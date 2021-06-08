@@ -8,23 +8,21 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>xyz.mqiy</groupId>
-	<artifactId>mqiy-order</artifactId>
+	<artifactId>mqiy-member</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mqiy-order</name>
+	<name>mqiy-member</name>
 	<description>Demo project for Spring Boot</description>
-
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 	<dependencies>
-
-		<dependency>
-			<groupId>xyz.mqiy</groupId>
-			<artifactId>mqiy-interface</artifactId>
-		</dependency>
 
 		<!--全局排除spring-boot-starter-logging内的所有依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>
+
 
 		<!-- log4j2. -->
 		<dependency>
@@ -43,6 +41,10 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>xyz.mqiy</groupId>
+			<artifactId>mqiy-interface</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>com.alibaba.spring.boot</groupId>
@@ -56,7 +58,6 @@
 
 
 	</dependencies>
-
 
 	<build>
 		<plugins>

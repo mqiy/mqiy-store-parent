@@ -1,13 +1,15 @@
 dubbo:
   application:
-    name: order-service
+    name: member-service
   protocol:
     name: dubbo
-    port: 27075
+    port: 27070
   registry:
     address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: xyz.mqiy.demo.service
 spring:
   application:
-    name: order-service
+    name: member-service
 server:
-  port: 7075
+  port: 7070
